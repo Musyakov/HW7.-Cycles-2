@@ -35,6 +35,7 @@ public class Main {
             System.out.print(i + " ");
         }
     }
+
     public static void task3() {
         System.out.println("Задача 3");
         int population = 12_000_000;
@@ -45,64 +46,68 @@ public class Main {
             System.out.println("Year " + i + " the population is " + population);
         }
     }
+
     public static void task4() {
         System.out.println("Задача 4");
         double savings = 15_000;
-        int i = 0;
+        int month = 0;
+        double interestRate = 0.07;
         while (savings <= 12_000_000) {
-            i = i + 1;
-            savings = savings + savings*7/100;
-            int roundedSavings = (int)Math.round(savings);
-            System.out.println("Month " + i + " the amount of savings is " + roundedSavings);
+            month = month + 1;
+            savings = savings + savings * interestRate;
+            int roundedSavings = (int) Math.round(savings);
+            System.out.println("Month " + month + " the amount of savings is " + roundedSavings);
         }
-        System.out.println("It will take " + i + " months to reach the goal of 12M total savings");
+        System.out.println("It will take " + month + " months to reach the goal of 12M total savings");
     }
+
     public static void task5() {
         System.out.println("Задача 5");
         double savings = 15_000;
         int i = 0;
         while (savings <= 12_000_000) {
             i = i + 1;
-            savings = savings + savings*7/100;
-            int roundedSavings = (int)Math.round(savings);
+            savings = savings + savings * 7 / 100;
+            int roundedSavings = (int) Math.round(savings);
             if (i % 6 == 0) {
                 System.out.println("Month " + i + " the amount of savings is " + roundedSavings);
             }
         }
         System.out.println("It will take " + i + " months to reach the goal of 12M total savings");
     }
+
     public static void task6() {
         System.out.println("Задача 6");
         double savings = 15_000;
         int i = 1;
-        while (i <= 9*12) {
-            savings = savings + savings*7/100;
+        while (i <= 9 * 12) {
+            savings = savings + savings * 7 / 100;
             i = i + 1;
-            int roundedSavings = (int)Math.round(savings);
+            int roundedSavings = (int) Math.round(savings);
             if (i % 6 == 0) {
                 System.out.println("Month " + i + " the amount of savings is " + roundedSavings);
             }
         }
     }
+
     public static void task7() {
         System.out.println("Задача 7");
-        int day = 0;
-        for (int dayNumberInitialFriday = 4; dayNumberInitialFriday <= 31; dayNumberInitialFriday++) {
-            day = day + 1;
-            if (dayNumberInitialFriday % 7 == 0) {
-                System.out.println("Today is friday, the " + day + "th of august . You have to prepare the report.");
-            }
+        int dayNumberInitialFriday = 4;
+        for (; dayNumberInitialFriday <= 31; dayNumberInitialFriday = dayNumberInitialFriday + 7) {
+            System.out.println("Today is friday, the " + dayNumberInitialFriday + "th of august . You have to prepare the report.");
         }
     }
+
     public static void task8() {
         System.out.println("Задача 8");
         int currentYear = 2023;
-        int cometPeriodInYears = 79;
+        int cometAppearenceYear = 0;
+        int cometPeriod = 79;
         int twoCenturiesAgo = currentYear - 200;
         int aCenturyAfter = currentYear + 100;
-        for (int year = 0; year <= aCenturyAfter; year++) {
-            if (year % cometPeriodInYears == 0 && year >= twoCenturiesAgo) {
-                System.out.println(year);
+        for (; cometAppearenceYear <= aCenturyAfter; cometAppearenceYear = cometAppearenceYear + cometPeriod) {
+            if (cometAppearenceYear >= twoCenturiesAgo) {
+                System.out.println(cometAppearenceYear);
             }
         }
     }
